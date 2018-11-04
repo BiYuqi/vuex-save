@@ -14,7 +14,7 @@ import vuexSave from 'vuex-save'
 const store = new Vuex.Store({
   state,
   mutations,
-  plugins: [myPlugin({
+  plugins: [vuexSave({
     // set save mode
     mode: 'localStorage'
   })]
