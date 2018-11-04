@@ -1,6 +1,6 @@
 {
   "name": "vuex-save",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "自动本地化存储vuex,解决刷新页面vuex数据丢失",
   "main": "index.js",
   "scripts": {
