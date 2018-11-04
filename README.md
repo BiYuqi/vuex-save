@@ -4,7 +4,7 @@
 
 ## 安装
 ```js
-npm install vuex-save
+npm install vuex-save -S
 ```
 ## 使用
 ```js
