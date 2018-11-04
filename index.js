@@ -29,7 +29,7 @@ export default function (params) {
   let staticMode
   // 判断存储模式
   if (mode && typeof mode === 'string') {
-    if (mode !== 'localStorage' || mode !== 'sessionStorage') {
+    if (mode !== 'localStorage' && mode !== 'sessionStorage') {
       staticMode = STATIC_MODE
     } else {
       staticMode = mode
