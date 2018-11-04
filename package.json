@@ -1,0 +1,24 @@
+{
+  "name": "vuex-save",
+  "version": "1.0.0",
+  "description": "自动本地化存储vuex,解决刷新页面vuex数据丢失",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BiYuqi/vuex-save.git"
+  },
+  "keywords": [
+    "vuex",
+    "vuex-refresh",
+    "vuex-save"
+  ],
+  "author": "BiYuqi <biyuqiwan@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BiYuqi/vuex-save/issues"
+  },
+  "homepage": "https://github.com/BiYuqi/vuex-save#readme"
+}
