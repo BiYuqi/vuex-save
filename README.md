@@ -20,8 +20,9 @@ const store = new Vuex.Store({
   })]
 })
 ```
-## API
+## API
 
 ```js
 // TODO
+// 利用 parcel 编译代码 ES6 => ES5
 ```
