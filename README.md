@@ -1,12 +1,12 @@
 ## [vuex-save](https://github.com/BiYuqi/vuex-save)
 
-> 自动本地化存储vuex数据, 解决刷新页面vuex数据丢失
+> 自动本地化存储vuex数据, 解决刷新页面vuex数据丢失
 
-## 安装
+## 安装 (Installation)
 ```js
 npm install vuex-save -S
 ```
-## 使用
+## 使用 (Usage)
 ```js
 import vuexSave from 'vuex-save'
 
