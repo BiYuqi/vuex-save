@@ -16,13 +16,16 @@ const store = new Vuex.Store({
   mutations,
   plugins: [vuexSave({
     // set save mode
+    // 默认为localStorage mode可不传
     mode: 'localStorage'
   })]
+  // or
+  // plugins: [vuexSave()]
 })
 ```
 ## API
 
 ```js
 // TODO
-// 利用 parcel 编译代码 ES6 => ES5
+// 支持module定向存储
 ```

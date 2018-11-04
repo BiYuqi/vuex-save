@@ -24,7 +24,7 @@ const getStore = (mode) => {
  * @description 默认导出方法，暂时默认保存全部state
  * @param {Object} params 
  */
-export default function (params) {
+export default function (params = {}) {
   let { mode } = params
   let staticMode
   // 判断存储模式
@@ -41,7 +41,7 @@ export default function (params) {
   return store => {
     // 初始化加载重置
     const localStore = getStore(staticMode)
-    localStore && store.replaceState(Object.assign({}, store.state, localStore))
+    localStore && store.replaceState({...store.state, ...localStore})
     
     // 监听并实施存储到本地
     store.subscribe((mutation, state) => {
