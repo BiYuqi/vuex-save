@@ -20,12 +20,16 @@ const store = new Vuex.Store({
     mode: 'localStorage'
   })]
   // or
+  // plugins: [vuexSave({
+    // set save mode as sessionStorage
+    // mode: 'sessionStorage'
+  // })]
+  // or 
   // plugins: [vuexSave()]
 })
 ```
-## API
+## TODO
 
 ```js
-// TODO
 // 支持module定向存储
 ```
