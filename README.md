@@ -42,6 +42,10 @@ const store = new Vuex.Store({
   mode: 'set the local data mode that you need' // Default mode ==> localStorage
 }
 ```
+## Change LOG
+
+**1.2 version**
+* 修复1.1版本不能自定义本地存储name的问题
 
 ## TODO
 
