@@ -15,21 +15,36 @@ const store = new Vuex.Store({
   state,
   mutations,
   plugins: [vuexSave({
-    // set save mode
-    // 默认为localStorage mode可不传
+    // set save name and mode
+    name: 'loadingmore_save_vuex',
     mode: 'localStorage'
   })]
   // or
   // plugins: [vuexSave({
-    // set save mode as sessionStorage
-    // mode: 'sessionStorage'
+  //  name: 'loadingmore_save_vuex',
+  //  mode: 'sessionStorage'
   // })]
-  // or 
+  // or default
   // plugins: [vuexSave()]
 })
 ```
+
+## API
+
+```js
+/**
+ * @param {Object}
+ * @param {name} String
+ * @param {mode} String localStorage or sessionStorage
+ */
+{
+  name: 'your local data name', // Default name ==> Save_Vuex_Static_Name
+  mode: 'set the local data mode that you need' // Default mode ==> localStorage
+}
+```
+
 ## TODO
 
 ```js
-// 支持module定向存储
+// support save store single module
 ```
