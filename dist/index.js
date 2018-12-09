@@ -44,31 +44,34 @@
   var STATIC_MODE = 'localStorage';
   /**
    * @description 存储
-   * @param {*} mode 
+   * @param {*} mode
    */
 
   var setStore = function setStore(state, mode) {
-    window[mode].setItem(SaveVuexStaticName, JSON.stringify(state));
+    var name = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : SaveVuexStaticName;
+    window[mode].setItem(name, JSON.stringify(state));
   };
   /**
    * @description 获取
-   * @param {String} mode 
+   * @param {String} mode
    */
 
 
   var getStore = function getStore(mode) {
-    var local = window[mode].getItem(SaveVuexStaticName);
+    var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : SaveVuexStaticName;
+    var local = window[mode].getItem(name);
     return local ? JSON.parse(local) : {};
   };
   /**
    * @description 默认导出方法，暂时默认保存全部state
-   * @param {Object} params 
+   * @param {Object} params
    */
 
 
   function index () {
     var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    var mode = params.mode;
+    var mode = params.mode,
+        name = params.name;
     var staticMode; // 判断存储模式
 
     if (mode && typeof mode === 'string') {
@@ -80,15 +83,20 @@
     } else {
       // console.log('怀疑是无效字符)
       staticMode = STATIC_MODE;
+    } // 自定义name
+
+
+    if (name && typeof name === 'string' && name.indexOf(' ') < 0) {
+      SaveVuexStaticName = name;
     }
 
     return function (store) {
       // 初始化加载重置
-      var localStore = getStore(staticMode);
+      var localStore = getStore(staticMode, SaveVuexStaticName);
       localStore && store.replaceState(_objectSpread({}, store.state, localStore)); // 监听并实施存储到本地
 
       store.subscribe(function (mutation, state) {
-        setStore(state, staticMode);
+        setStore(state, staticMode, SaveVuexStaticName);
       });
     };
   }
